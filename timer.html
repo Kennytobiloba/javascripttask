@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="timer.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="timer-container">
+        <h1 id="timer-display">00:00:00</h1>5
+
+    </div>
+    <script>
+        var timeBegan = null;
+        var timeStopped = null;
+        var stopDuration = 0;
+        var startInterval = null;
+        var flag = false;
+        var timer = 0
+        const timerContainer = document.getElementsByClassName('timer-container')[0];
+        
+    //     if(!flag){
+    //     startTimer()
+    //     flag = true;
+    //     flag = setInterval(startTimer, 0);
+    // }
+    window.addEventListener('load', function() {
+  startTimer();
+});
+    
+timerContainer.addEventListener('click', function() {
+  stopTimer()
+  
+});
+   
+   timerContainer.addEventListener("dblclick", function(){
+    resetTimer();
+
+   })
+   function startTimer(){
+    if (timeBegan === null)
+    timeBegan = new Date();
+
+    if (timeStopped !== null)
+    stopDuration  += (new Date() - timeStopped);
+    startInterval = setInterval(clockRunning, 10);
+    
+
+   }
+   function stopTimer(){
+    timeStopped = new Date();
+
+    clearInterval(startInterval);
+
+   }
+
+   function clockRunning(){
+    var currentTime = new Date();
+    var timeElapsed = new Date(currentTime - timeBegan - stopDuration);
+    var minutes = timeElapsed.getUTCMinutes();
+    var seconds = timeElapsed.getUTCSeconds();
+    var milliseconds = timeElapsed.getMilliseconds();
+    milliseconds = Math.floor(milliseconds/10);
+    document.querySelector("#timer-display").innerHTML = (minutes < 10 ? '0' + minutes:minutes) + ":" + 
+     (seconds < 10 ? '0' + seconds:seconds) + ":" +(milliseconds < 10 ? '0' + milliseconds:milliseconds);
+
+   }
+     function resetTimer(){
+    clearInterval(startInterval)
+    timeBegan = null;
+    timeStopped = null;
+    document.getElementById("timer-display").innerHTML = "00:00:00";
+    flag = false;
+   }
+
+    </script>
+</body>
+</html>

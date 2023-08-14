@@ -1,0 +1,201 @@
+/* change color section  */
+.container{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+button{
+    color: white;
+    padding: 20px;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+/* hex section  */
+.container-hex{
+    width: 95%;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-hex .hex-color{
+    /* border: 1px solid black; */
+    text-align: center;
+
+}
+.container-hex .hex-color h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+    animation: colorchange 5s infinite alternate;
+}
+.container .hex-color h2{
+    font-size: 2rem;
+    padding-top: 15%;
+}
+@keyframes colorchange {
+    0%{
+        color: red;
+    }
+    40%{
+        color: pink;
+    }
+    60%{
+        color: blue;
+    }
+    80%{
+        color: black;
+    }
+   100%{
+        color: yellow;
+    }
+    
+}
+/* quotes section  */
+body{
+    background-color: #06bcc1;
+}
+.container-quote{
+    /* border: 1px solid black; */
+    width: 95%;
+    height: 100vh;
+    display: flex;
+}
+.quotes{
+    width: 900px;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 50px;
+    color: gray;
+    background-color: whitesmoke;
+    border: 10px solid #f4d1ae;
+
+}
+ p{
+font-size: 1.5rem;
+
+}
+h3{
+    font-size: 1.5rem;
+}
+.btn{
+    margin-left: 700px;
+}
+@media (max-width:430px) {
+    p, h3{
+        font-size: 1rem;
+    }
+}
+
+
+
+
+ /* message section  */
+ body{
+    background-color: aquamarine;
+ }
+ .container-message{
+    width: 95%;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .container-message .content{
+    background-color: whitesmoke;
+    width: 600px;
+    height: 40vh;
+    /* padding: 50px; */
+    /* margin: auto; */
+    /* text-align: center; */
+    box-shadow: 0  0 2px 0px rgba(0, 0, 0, 0.2);
+ }
+ .container-message .content .message{
+    border-bottom: 2px solid black;
+    text-transform: capitalize;
+    padding-bottom: 8px;
+    text-align: center;
+ }
+ .container-message .content .input{
+    margin-left: 30px;
+ }
+    
+
+
+ /* counter section  */
+ 
+ .container-count{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+    .container-count .count-section{
+        background-color: whitesmoke;
+        border: 5px solid black;
+        text-align: center;
+        width: 600px;
+        padding: 30px;
+    }
+    h1{
+        text-transform: uppercase;
+        font-weight: 700px;
+    }
+    h2{
+        font-size: 55px;
+        font-weight: bolder;
+    }
+/* cloxk section  */
+.container-clock{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    
+}
+.container-clock .digital{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.246);
+    
+}
+h1{
+    display: flex;
+    margin: 0 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+}
+ /* image section  */
+ .container-image{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #f4d1ae;
+ }
+ /* .container-image .swiper .swiper-wrapper{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+ }
+ .swiper{ */

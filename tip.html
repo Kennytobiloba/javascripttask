@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tip.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1 style="text-align: center;; font-weight: bold;">Loan interest Calculator</h1>
+            <p style="border-bottom: 2px solid rgba(211,211, 211, 0.5);"></p>
+            <br>
+    
+            <label for="amount"> Amount to borrow</label>
+            <br>
+            <input type="number" id="amount" placeholder="Enter amount to borrow in naira">
+            
+            
+            <!-- <label for="guest">Number of Guest</label>
+            <br>
+            <input type="number" id="guest"
+            >  -->
+            <br>
+            <br>
+            <label for="quality">Duration</label>
+            <br>
+            <select name="" id="quality">
+                <option disable selected value="0">Choose...</option>
+                <option value="15">1 Month</option>
+                <option value="30">2 Months</option>
+                <option value="40">3 Months</option>
+                <option value="50">4 Months</option>
+                <option value="60">5 Months</option>
+                <option value="70">6 Months</option>
+                <option value="80">7 Months</option>
+                <option value="90">8 Months</option>
+                <option value="100">9 Months</option>
+                <option value="110">10 Months</option>
+                <option value="115">11 Months</option>
+                <option value="125">12 Months</option>
+            </select>
+            <div style="text-align: center;">
+                <p style="border-top: 2px solid rgba(211,211, 211, 0.5);"></p>
+                <button class="btn" style="border-radius: 5px; width:fit-content ;">Calculator</button>
+            </div>
+        </div>
+        <div id="tip-amount">
+
+        </div>
+    </d
+    iv>
+    <script>
+        const amount = document.querySelector('#amount')
+        // const guest = document.querySelector('#guest')
+        const quality = document.querySelector('#quality')
+        const tipAmount = document.querySelector('#tip-amount')
+        const button = document.querySelector('.btn')
+        
+        button.addEventListener('click',function(e){
+            e.preventDefault
+            var realAmount = parseInt(amount.value);
+            var realDuration = parseInt(quality.value);
+
+            const tip = (((realDuration/100)* realAmount)/(realAmount));
+            
+            amount.value ="";
+            // guest.value = "";
+            quality.value = "";
+
+            if (tip === 'NaN'){
+                tipAmount.innerHTML = 'N' + tip.toLocalstring('en-US');
+                showTipAmount();
+            }
+            else{
+                tipAmount.innerHTML = 'interest' + ' ' + tip + ' ' + 'each';
+                showTipAmount();
+            }
+
+        })
+
+        showTipAmount = () =>{
+            var x = tipAmount;
+            x.className ='show';
+            setTimeout(function(){
+                x.className = x.className.replace('show', '');},5000);
+            
+        }
+          
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-quote">
+        <div class="quotes">
+            <p class="quote">
+                hello word
+            </p>
+            <h3 class="author">
+                Codefoxx
+            </h3>
+        </div>    
+    </div>
+
+    <button class="btn">Generate quotes</button>
+     <script>
+ const button = document.querySelector('.btn')
+//  const quote = document.querySelector('.quote')
+//  const author = document.querySelector('.author')
+ button.addEventListener('click',function(){
+    var quotes ={
+    "kenny":'"i love eating rice"',
+     "taiwo":'"taiwo love eating yam"',
+     "mum" : '" i love my mum"'
+     }
+
+     var authors = Object.keys(quotes)
+     var author =authors[Math.floor(Math.random() * authors.length)]
+     var quote = quotes[author]
+     document.querySelector('.quote').innerHTML = quote;
+     document.querySelector('.author').innerHTML = author;
+ })
+
+     </script>
+</body>
+</html>

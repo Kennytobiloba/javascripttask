@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="math.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    
+   <div class="container">
+    <h1>   KID CALCULATR</h1>
+    <ul>
+    <li  class="current"><a href="math.html">add</a></li>
+    <li> <a href="sub.html">Subtract</a></li>
+    <li><a href="mutiply.html">Mutiply</a></li>
+    <li> <a href="divide.html">division</a></li>
+</ul>
+   </div> 
+</header>
+<div class="wrapper">
+    <div class="equation">
+        <h1 class="num1" style="color:#fe4a49">1</h1>
+        <h1 style="color:#2ab7ca">/</h1>
+        <h1 class="num2" style="color:#fed766">1</h1>
+        <h1 style="color:#fe4a49">=</h1>
+        <h1 style="color:grey">?</h1>
+    </div>
+    <div class="answer">
+        <h1 class="option1">1</h1>
+        <h1 class="option2">2</h1>
+        <h1 class="option3">3</h1>
+    </div>
+</div>
+<script>
+    const option1 = document.querySelector('.option1')
+    const option2 = document.querySelector('.option2')
+    const option3 = document.querySelector('.option3')
+    var answer = 0
+
+    function generate_equ(){
+        var num1 =Math.floor(Math.random() * 13)
+        var num2 = Math.floor(Math.random() * 13)
+        var dummy1 = Math.floor(Math.random() * 13)
+        var dummy2 = Math.floor(Math.random() * 13)
+        var allanswers = [];
+        var switchanswers = [];
+        answer = num1 / num2;
+        document.querySelector('.num1').innerHTML = num1;
+        document.querySelector('.num2').innerHTML = num2;
+
+        allanswers = [answer, dummy1 ,dummy2];
+
+        for (i = allanswers.length ;i--;) {
+            switchanswers.push(allanswers.splice(Math.floor(Math.random() * (i + 1)),1)[0]);
+            
+        }
+
+
+        option1.innerHTML = switchanswers[0];
+        option2.innerHTML = switchanswers[1];
+        option3.innerHTML = switchanswers[2];
+
+       
+
+
+    }
+    
+   
+    option1 .addEventListener("click", function(){
+        if(option1.innerHTML == answer){
+            generate_equ();
+        }
+        else
+        alert("You click the wrong answer")
+    })
+    option2.addEventListener('click',function(){
+        if(option2.innerHTML == answer){
+            generate_equ();
+        }
+        else
+        alert('you click the wrong answer')
+    })
+    option3.addEventListener('click',function(){
+        if(option3.innerHTML == answer){
+            generate_equ();
+        }
+        else
+        alert('you click the wrong answer')
+    })
+    generate_equ();
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container-clock">
+    <div class="digital">
+        <h1 class="day">MON</h1>
+        <h1 class="hours">04</h1>
+        <h1 class="bar1">|</h1>
+        <h1 class="minute">20</h1>
+        <h1 class="bar2">|</h1>
+        <h1 class="pm">AM</h1>
+    </div>
+   </div> 
+   <script>
+    window.addEventListener('load',calculatetime)
+    function calculatetime (){
+        var date = new Date();
+        var daynumber = date.getDay();
+        var minute = date.getMinutes();
+        var hour = date.getHours();
+        var aspm = hour >= 12 ? 'PM' : 'AM';
+        var daynames =["SUN", "MON" , "TUE", "WEN","THR", "FRI","SAT"]
+        hour = hour % 12;
+        hour = hour ? 12 : '12';
+        hour = hour < 10 ? '0' + hour : hour;
+        minute = minute < 10 ? '0' + minute : minute;
+        document.querySelector(".day").innerHTML = daynames[daynumber];
+        document.querySelector('.hours').innerHTML = hour;
+        document.querySelector('.minute').innerHTML = minute;
+        document.querySelector('.pm').innerHTML = aspm;
+
+        setTimeout(calculatetime,200);
+        
+    }
+   </script>
+</body>
+</html>
